@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MYCORESS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <button onclick="show('feed')">📸</button>
+  <button onclick="show('chat')">💬</button>
+  <button onclick="show('upload')">⬆️</button>
+  <button onclick="show('profile')">👤</button>
+</nav>
+
+<section id="feed" class="page active">
+  <h2>Publications</h2>
+</section>
+
+<section id="chat" class="page">
+  <div id="chatBox"></div>
+  <input id="msg">
+  <button onclick="sendMessage()">Envoyer</button>
+</section>
+
+<section id="upload" class="page">
+  <input type="file" id="file">
+  <button onclick="uploadFile()">Uploader</button>
+</section>
+
+<section id="profile" class="page">
+  <h2>Profil utilisateur</h2>
+</section>
+
+<script>
+function show(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+</script>
+
+<script type="module" src="app.js"></script>
+<script type="module" src="chat.js"></script>
+<script type="module" src="upload.js"></script>
+
+</body>
+</html>
